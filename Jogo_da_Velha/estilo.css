@@ -1,16 +1,26 @@
 body{
     text-align: center;
+    background-color: #12100E;
+}
+
+.navbar {
+    background-color: #21A0A0;
+    margin-bottom: 25px;
 }
 
 .quadrado{
     text-align: center;
-    width: 50px;
+    width: 2.6em;
     background-color: #eee;
     display: inline-block;
-    padding: 40px;
+    padding: 33px;
     font-size: 60px;
     margin: 5px;
     cursor: pointer;
+    color: #eee;
+}
+
+.font-winner{
     color: #eee;
 }
 

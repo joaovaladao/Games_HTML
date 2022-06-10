@@ -6,12 +6,20 @@
         Jogo da Velha
     </title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="#">
+            <img src="imgs/groot_logo.png" width="60">
+        </a>
+        <div class="collapse navbar-collapse">
+            <h1>Jogo da Velha</h1>
+        </div>
+    </nav>
 
-    <h1>Jogo da Velha</h1>
 
 <!-- Criação dos quadrados -->
 
@@ -33,7 +41,7 @@
 
 <!-- ------------------- -->
 
-    <div class="jogador">
+    <div class="jogador font-winner">
         <label>
             Jogador:
         </label>
@@ -43,7 +51,7 @@
     </div>
 
 
-    <div class="vencedor">
+    <div class="vencedor font-winner">
         <label>
             VENCEDOR:
         </label>

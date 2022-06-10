@@ -115,9 +115,9 @@ function muda_cor(quadrado1, quadrado2, quadrado3){
     quadrado2.style.color = '#00ff00';
     quadrado3.style.color = '#00ff00';
 
-    quadrado1.style.background = '#000';
-    quadrado2.style.background = '#000';
-    quadrado3.style.background = '#000';
+    quadrado1.style.background = '#647878';
+    quadrado2.style.background = '#647878';
+    quadrado3.style.background = '#647878';
 }
 
 function define_vencedor(quadrado){
