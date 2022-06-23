@@ -13,7 +13,7 @@ function start() { // Inicio da função start()
     var TECLA = {
         W: 87,
         S: 83,
-        space: 8
+        space: 32
     }
     jogo.pressionou = [];
 
@@ -23,6 +23,8 @@ function start() { // Inicio da função start()
     var velocidade_amigo = 1;
 
     var pos_y = parseInt(Math.random() * 335);
+
+    var verifica_disparo = true;
 
     //Verifica se o usuário pressionou alguma tecla		
 	$(document).keydown(function(e){
@@ -36,7 +38,7 @@ function start() { // Inicio da função start()
 
     function loop(){
         movefundo();
-        movejogador();
+        acaojogador();
         moveinimigo1();
         moveinimigo2();
         moveamigo();
@@ -47,7 +49,7 @@ function start() { // Inicio da função start()
         $("#fundoGame").css("background-position",pos-1);
     }
 
-    function movejogador(){
+    function acaojogador(){
         if(jogo.pressionou[TECLA.W]){
             var top = parseInt($("#jogador").css("top"));
             $("#jogador").css("top",top-10);
@@ -64,6 +66,10 @@ function start() { // Inicio da função start()
             if(top >= 435){
                 $("#jogador").css("top",top-10);
             }
+        }
+
+        if(jogo.pressionou[TECLA.space]){
+            disparo();
         }
     }
 
@@ -94,6 +100,22 @@ function start() { // Inicio da função start()
 
         if(pos_x >= 906){
             $("#amigo").css("left", 0);
+        }
+    }
+
+    function disparo(){
+        if(verifica_disparo == true){
+            verifica_disparo = false;
+
+            pos_helic_y = parseInt($("#jogador").css("top"));
+            pos_helic_x = parseInt($("#jogador").css("left"));
+
+            pos_disparo_y = pos_helic_y + 37;
+            pos_disparo_x = pos_helic_x + 190;
+
+            $("#fundoGame").append("<div id='disparo'></div");
+            $("#disparo").css("top",pos_disparo_y);
+            $("#disparo").css("left",pos_disparo_x);
         }
     }
     
