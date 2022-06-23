@@ -110,12 +110,25 @@ function start() { // Inicio da função start()
             pos_helic_y = parseInt($("#jogador").css("top"));
             pos_helic_x = parseInt($("#jogador").css("left"));
 
-            pos_disparo_y = pos_helic_y + 37;
+            pos_disparo_y = pos_helic_y + 39;
             pos_disparo_x = pos_helic_x + 190;
 
             $("#fundoGame").append("<div id='disparo'></div");
             $("#disparo").css("top",pos_disparo_y);
             $("#disparo").css("left",pos_disparo_x);
+
+            var tempoDisparo=window.setInterval(executaDisparo, 30);
+        }
+
+        function executaDisparo(){
+            pos_x = parseInt($("#disparo").css("left"));
+            $("#disparo").css("left", pos_x + 15);
+
+            if(pos_x >= 900){
+                window.clearInterval(tempoDisparo);
+                $("#disparo").remove();
+                verifica_disparo = true;
+            }
         }
     }
     
