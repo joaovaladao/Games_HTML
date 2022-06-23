@@ -17,7 +17,11 @@ function start() { // Inicio da função start()
     }
     jogo.pressionou = [];
 
-    var velocidade = 5;
+    //Velocidades dos personagens
+    var velocidade_inimigo1 = 5;
+    var velocidade_inimigo2 = 3;
+    var velocidade_amigo = 1;
+
     var pos_y = parseInt(Math.random() * 335);
 
     //Verifica se o usuário pressionou alguma tecla		
@@ -34,6 +38,8 @@ function start() { // Inicio da função start()
         movefundo();
         movejogador();
         moveinimigo1();
+        moveinimigo2();
+        moveamigo();
     }
 
     function movefundo(){
@@ -63,13 +69,31 @@ function start() { // Inicio da função start()
 
     function moveinimigo1(){
         pos_x = parseInt($("#inimigo1").css("left"));
-        $("#inimigo1").css("left", pos_x - velocidade);
+        $("#inimigo1").css("left", pos_x - velocidade_inimigo1);
         $("#inimigo1").css("top", pos_y);
 
         if(pos_x <= 0){
             pos_y = parseInt(Math.random() * 335);
             $("#inimigo1").css("left", 694);
             $("#inimigo1").css("top", pos_y);
+        }
+    }
+
+    function moveinimigo2(){
+        pos_x = parseInt($("#inimigo2").css("left"));
+        $("#inimigo2").css("left", pos_x - velocidade_inimigo2);
+
+        if(pos_x <= 0){
+            $("#inimigo2").css("left", 775);
+        }
+    }
+
+    function moveamigo(){
+        pos_x = parseInt($("#amigo").css("left"));
+        $("#amigo").css("left", pos_x + velocidade_amigo);
+
+        if(pos_x >= 906){
+            $("#amigo").css("left", 0);
         }
     }
     
