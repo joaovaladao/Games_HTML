@@ -7,6 +7,7 @@ function start() { // Inicio da função start()
 	$("#fundoGame").append("<div id='inimigo2' ></div>");
 	$("#fundoGame").append("<div id='amigo' class='anima3'></div>");
     $("#fundoGame").append("<div id='placar'></div>");
+    $("#fundoGame").append("<div id='energia'></div>");
 
     var jogo = {};
     jogo.timer = setInterval(loop,30);
@@ -33,6 +34,8 @@ function start() { // Inicio da função start()
     var salvos=0;
     var perdidos=0;
 
+    var energiaAtual=3;
+
     //Verifica se o usuário pressionou alguma tecla		
 	$(document).keydown(function(e){
         jogo.pressionou[e.which] = true;
@@ -51,6 +54,7 @@ function start() { // Inicio da função start()
         moveamigo();
         colisao();
         placar();
+        energia();
     }
 
     function movefundo(){
@@ -161,6 +165,8 @@ function start() { // Inicio da função start()
                 $("#inimigo1").css("left", 694);
                 $("#inimigo1").css("top", pos_y);
 
+                energiaAtual--;
+
             }
 
             if (colisao2.length>0) {
@@ -173,6 +179,7 @@ function start() { // Inicio da função start()
                 $("#inimigo2").remove();
                 pontos=pontos+50;
                     
+                energiaAtual--;
                 reposicionaInimigo2();  
             }
 
@@ -329,6 +336,31 @@ function start() { // Inicio da função start()
         $("#placar").html("<h2> Pontos: " + pontos + " Salvos: " + salvos + " Perdidos: " + perdidos + "</h2>");
         
     }
+
+    function energia() {
+	
+		if (energiaAtual==3) {
+			
+			$("#energia").css("background-image", "url(imgs/energia3.png)");
+		}
+	
+		if (energiaAtual==2) {
+			
+			$("#energia").css("background-image", "url(imgs/energia2.png)");
+		}
+	
+		if (energiaAtual==1) {
+			
+			$("#energia").css("background-image", "url(imgs/energia1.png)");
+		}
+	
+		if (energiaAtual==0) {
+			
+			$("#energia").css("background-image", "url(imgs/energia0.png)");
+			// fim de jogo
+		}
+	
+	}
     
 
 } // Fim da função start

@@ -9,7 +9,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 <br>
 <img src="imgs/jogo_da_velha.jpg" alt="exemplo imagem" width="400px;">
 
-- [ ] Desenvolver jogo de naves com o Jquery `(em desenvolvimento)`
+- [ ] Desenvolver jogo de resgate com o Jquery `(em desenvolvimento)`
 <br>
 <img src="imgs/jogo_nave.jpg" alt="exemplo imagem" width="400px;">
 
