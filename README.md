@@ -9,9 +9,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 <br>
 <img src="imgs/jogo_da_velha.jpg" alt="exemplo imagem" width="400px;">
 
-- [ ] Desenvolver jogo de resgate com o Jquery `(em desenvolvimento)`
+- [x] Desenvolver jogo de resgate com o Jquery
 <br>
-<img src="imgs/jogo_nave.jpg" alt="exemplo imagem" width="400px;">
+<img src="imgs/jogo_resgate.png" alt="exemplo imagem" width="400px;">
 
 - [ ] Desenvolver jogo da memória
 
@@ -19,7 +19,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 - [ ] Desenvolver jogo dinossauro Google
 
-- [ ] Unir todos os jogos em um único HTML
+- [ ] Unir todos os jogos em um único HTML `(em desenvolvimento)`
 
 ## 💻 Pré-requisitos
 
