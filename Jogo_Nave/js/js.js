@@ -150,9 +150,9 @@ function start() { // Inicio da função start()
                 inimigo1Y = parseInt($("#inimigo1").css("top"));
                 explosao1(inimigo1X,inimigo1Y);
             
-                posicaoY = parseInt(Math.random() * 334);
-                $("#inimigo1").css("left",694);
-                $("#inimigo1").css("top",posicaoY);
+                pos_y = parseInt(Math.random() * 335);
+                $("#inimigo1").css("left", 694);
+                $("#inimigo1").css("top", pos_y);
             }
 
             if (colisao2.length>0) {
@@ -165,6 +165,34 @@ function start() { // Inicio da função start()
                 $("#inimigo2").remove();
                     
                 reposicionaInimigo2();  
+            }
+
+            if (colisao3.length>0) {
+		
+                inimigo1X = parseInt($("#inimigo1").css("left"));
+                inimigo1Y = parseInt($("#inimigo1").css("top"));
+                    
+                explosao1(inimigo1X,inimigo1Y);
+                $("#disparo").css("left",950);
+                    
+                pos_y = parseInt(Math.random() * 335);
+                $("#inimigo1").css("left", 694);
+                $("#inimigo1").css("top", pos_y);
+                // console.log(pos_y);
+                    
+                }
+
+            if (colisao4.length>0) {
+    
+                inimigo2X = parseInt($("#inimigo2").css("left"));
+                inimigo2Y = parseInt($("#inimigo2").css("top"));
+                $("#inimigo2").remove();
+            
+                explosao2(inimigo2X,inimigo2Y);
+                $("#disparo").css("left",950);
+                
+                reposicionaInimigo2();
+                    
             }
         
         }
