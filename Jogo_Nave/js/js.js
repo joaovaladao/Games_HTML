@@ -168,6 +168,7 @@ function start() { // Inicio da função start()
             }
 
             if (colisao3.length>0) {
+                console.log("colisão3");
 		
                 inimigo1X = parseInt($("#inimigo1").css("left"));
                 inimigo1Y = parseInt($("#inimigo1").css("top"));
@@ -183,7 +184,8 @@ function start() { // Inicio da função start()
                 }
 
             if (colisao4.length>0) {
-    
+                console.log("colisão4");
+
                 inimigo2X = parseInt($("#inimigo2").css("left"));
                 inimigo2Y = parseInt($("#inimigo2").css("top"));
                 $("#inimigo2").remove();
@@ -193,6 +195,13 @@ function start() { // Inicio da função start()
                 
                 reposicionaInimigo2();
                     
+            }
+
+            if (colisao5.length>0) {
+                console.log("colisão5");
+		
+                reposicionaAmigo();
+                $("#amigo").remove();
             }
         
         }
@@ -253,6 +262,24 @@ function start() { // Inicio da função start()
                 }
                 
             }	
+    }
+
+    function reposicionaAmigo() {
+	
+        var tempoAmigo=window.setInterval(reposiciona6, 6000);
+        
+            function reposiciona6() {
+                window.clearInterval(tempoAmigo);
+                tempoAmigo=null;
+                
+                if (fimdejogo==false) {
+                
+                $("#fundoGame").append("<div id='amigo' class='anima3'></div>");
+                
+                }
+            
+            }
+        
     }
     
 
