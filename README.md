@@ -12,9 +12,13 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [ ] Desenvolver jogo de naves com o Jquery `(em desenvolvimento)`
 <br>
 <img src="imgs/jogo_nave.jpg" alt="exemplo imagem" width="400px;">
+
 - [ ] Desenvolver jogo da memória
+
 - [ ] Desenvolver jogo espacial
+
 - [ ] Desenvolver jogo dinossauro Google
+
 - [ ] Unir todos os jogos em um único HTML
 
 ## 💻 Pré-requisitos
