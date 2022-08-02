@@ -6,6 +6,7 @@ function start() { // Inicio da função start()
 	$("#fundoGame").append("<div id='inimigo1' class='anima2' ></div>");
 	$("#fundoGame").append("<div id='inimigo2' ></div>");
 	$("#fundoGame").append("<div id='amigo' class='anima3'></div>");
+    $("#fundoGame").append("<div id='placar'></div>");
 
     var jogo = {};
     jogo.timer = setInterval(loop,30);
@@ -27,6 +28,11 @@ function start() { // Inicio da função start()
     var verifica_disparo = true;
     var fimdejogo=false;
 
+    //Valores placar
+    var pontos=0;
+    var salvos=0;
+    var perdidos=0;
+
     //Verifica se o usuário pressionou alguma tecla		
 	$(document).keydown(function(e){
         jogo.pressionou[e.which] = true;
@@ -44,6 +50,7 @@ function start() { // Inicio da função start()
         moveinimigo2();
         moveamigo();
         colisao();
+        placar();
     }
 
     function movefundo(){
@@ -153,6 +160,7 @@ function start() { // Inicio da função start()
                 pos_y = parseInt(Math.random() * 335);
                 $("#inimigo1").css("left", 694);
                 $("#inimigo1").css("top", pos_y);
+
             }
 
             if (colisao2.length>0) {
@@ -163,6 +171,7 @@ function start() { // Inicio da função start()
                 explosao2(inimigo2X,inimigo2Y);
                         
                 $("#inimigo2").remove();
+                pontos=pontos+50;
                     
                 reposicionaInimigo2();  
             }
@@ -179,8 +188,8 @@ function start() { // Inicio da função start()
                 pos_y = parseInt(Math.random() * 335);
                 $("#inimigo1").css("left", 694);
                 $("#inimigo1").css("top", pos_y);
-                // console.log(pos_y);
                     
+                pontos=pontos+100;
                 }
 
             if (colisao4.length>0) {
@@ -193,12 +202,14 @@ function start() { // Inicio da função start()
                 explosao2(inimigo2X,inimigo2Y);
                 $("#disparo").css("left",950);
                 
+                pontos=pontos+50;
                 reposicionaInimigo2();
                     
             }
 
             if (colisao5.length>0) {
                 console.log("colisão5");
+                salvos = salvos+1;
 		
                 reposicionaAmigo();
                 $("#amigo").remove();
@@ -211,6 +222,7 @@ function start() { // Inicio da função start()
                 amigoY = parseInt($("#amigo").css("top"));
                 explosao3(amigoX,amigoY);
                 $("#amigo").remove();
+                perdidos = perdidos+1;
                         
                 reposicionaAmigo();
                         
@@ -309,6 +321,12 @@ function start() { // Inicio da função start()
                 }
             
             }
+        
+    }
+
+    function placar() {
+	
+        $("#placar").html("<h2> Pontos: " + pontos + " Salvos: " + salvos + " Perdidos: " + perdidos + "</h2>");
         
     }
     
