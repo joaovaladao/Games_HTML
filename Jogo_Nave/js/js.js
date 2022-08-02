@@ -196,6 +196,7 @@ function start() { // Inicio da função start()
                 $("#inimigo1").css("left", 694);
                 $("#inimigo1").css("top", pos_y);
                     
+                velocidade_inimigo1 = velocidade_inimigo1 + 0.2;
                 pontos=pontos+100;
                 }
 
@@ -210,6 +211,7 @@ function start() { // Inicio da função start()
                 $("#disparo").css("left",950);
                 
                 pontos=pontos+50;
+                velocidade_inimigo2 = velocidade_inimigo2 + 0.5;
                 reposicionaInimigo2();
                     
             }
